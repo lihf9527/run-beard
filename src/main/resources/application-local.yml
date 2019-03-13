@@ -1,0 +1,9 @@
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://localhost/run-beard-dev?useUnicode=true&characterEncoding=utf8&useSSL=false
+#    username: root
+#    password: 123456
+#  redis:
+#    host: 192.168.99.11
+#    port: 6379
