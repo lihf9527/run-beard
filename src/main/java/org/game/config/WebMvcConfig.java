@@ -9,6 +9,7 @@ import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 
 import java.util.List;
 
@@ -21,10 +22,13 @@ public class WebMvcConfig implements WebMvcConfigurer {
     private AuthorizationInterceptor authorizationInterceptor;
     @Autowired
     private LoginUserHandlerMethodArgumentResolver loginUserHandlerMethodArgumentResolver;
+    @Autowired
+    private LocaleChangeInterceptor localeChangeInterceptor;
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(authorizationInterceptor);
+        registry.addInterceptor(localeChangeInterceptor);
     }
 
     @Override
